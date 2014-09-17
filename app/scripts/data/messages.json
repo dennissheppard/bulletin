@@ -1,0 +1,53 @@
+[
+  {
+    "_id": {
+      "$oid": "5asdfasdfwerwe234234ee9d8"
+    },
+    "message": "hello, again2",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z"
+  },
+  {
+    "_id": {
+      "$oid": "53asdfasdf23423423458"
+    },
+    "message": "hello, again2",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z"
+  },
+  {
+    "_id": {
+      "$oid": "5asdf234234235666646ee9d8"
+    },
+    "message": "hello, again2",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z"
+  },
+  {
+    "_id": {
+      "$oid": "5asdfasdf2342342348"
+    },
+    "message": "comment 1",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z",
+    "parentMessage": "5asdf234234235666646ee9d8"
+  },
+  {
+    "_id": {
+      "$oid": "5addsdafasdfsdf2342342348"
+    },
+    "message": "comment 2",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z",
+    "parentMessage": "5asdf234234235666646ee9d8"
+  },
+  {
+    "_id": {
+      "$oid": "lkj23l4kj2l3k4j2l3k4j"
+    },
+    "message": "hello, again2",
+    "user": "test",
+    "date": "2014-06-12T04:28:05.882Z"
+  }
+
+]

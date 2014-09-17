@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="scripts/components/login/login.css" />
+  <link rel="stylesheet" href="scripts/components/common/modal.css" />
+  <link rel="stylesheet" href="scripts/components/navbar/navbar.css" />
+  <link rel="stylesheet" href="scripts/components/common/common.css" />
+  <link rel="stylesheet" href="scripts/components/home/home.css" />
+</head>
+<body ng-app="bulletinApp">
+<loader></loader>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<div id="navbar" ng-controller="NavbarCtrl">
+
+  <div ng-include src="'scripts/components/navbar/navbar.tpl.html'"></div>
+</div>
+<div class="row">
+  <div>
+    <div class="container" ng-view=""></div>
+  </div>
+</div>
+
+
+
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/components/navbar/navbar-controller.js"></script>
+<script src="scripts/components/login/login-controller.js"></script>
+<script src="scripts/components/common/modal-directive.js"></script>
+<script src="scripts/components/common/user-service.js"></script>
+<script src="scripts/components/common/message-service.js"></script>
+<script src="scripts/components/common/loader-directive.js"></script>
+<script src="scripts/components/common/loader-service.js"></script>
+<script src="scripts/components/home/home-controller.js"></script>
+<script src="scripts/components/home/home-service.js"></script>
+<script src="scripts/components/home/voting-directive.js"></script>
+
+
+
+
+<!-- endbuild -->
+</body>
+</html>

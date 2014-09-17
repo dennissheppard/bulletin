@@ -1,0 +1,42 @@
+#login{
+  float: none;
+  margin: 100px auto;
+  position: inherit;
+  width: 240px;
+}
+
+#login input[type="text"], #login input[type="password"]{
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.logo{
+  color: #FFF;
+  font-size: 26px;
+  line-height: 20px;
+  padding: 15px;
+  margin-left: -15px;
+  float: left;
+}
+
+#login input[type="submit"], button{
+  color: #000;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 15px 0;
+  height: 50px;
+  width: 100%;
+}
+
+.register-form-input{
+  width: 60%;
+  margin: auto;
+}
+
+.register-link{
+  cursor: pointer;
+}

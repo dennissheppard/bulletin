@@ -1,0 +1,60 @@
+<div id="home">
+  <div class="new-post-wrapper">
+    <button ng-click="createMessage()">Post New Bulletin</button>
+  </div>
+  <div class="new-post-wrapper">
+    <input type="text" placeholder="Search Bulletins" ng-model="search">
+  </div>
+
+  <div class="popular-tags">
+    Popular Tags:
+    <div ng-repeat="tag in allExistingTags">{{tag.text}}</div>
+  </div>
+
+
+  <div class="new-message" ng-show="showNewMessageBox">
+    <textarea ng-model="newMessageContent"></textarea>
+    <input ng-model="tag" placeholder="Type a tag for your bulletin">
+    <select ng-model="tagSuggestion" ng-options="tag.text for tag in allExistingTags"></select>
+    <button ng-click="addTagToMessage()">Tag it</button>
+    <button ng-click="saveMessage()">Save</button>
+  </div>
+
+  <div class="message" ng-repeat="message in messageData.messages | filter: search ">
+    <div class="vote-wrapper">
+      <voting message="message"></voting>
+    </div>
+    <div class="message-body">{{message.message}}</div>
+    <div></div>
+    <div>by: {{message.user}}</div>
+    <div>on: {{message.date | date:'MM/dd/yy @ h:mma'}}</div>
+
+    <div>{{message.comments.length}} Comments</div>
+    <div ng-show="message.canDelete" ng-click="deleteMessage($index)"><a class="delete-link">Delete</a></div>
+
+    <div ng-repeat="tag in message.tags">
+      <span class="tag">{{tag.text}}</span>
+    </div>
+
+
+    <button ng-click="showCommentDialog($index)">Comment</button>
+  </div>
+
+  <modal-dialog show='modalShown' width='450px' height='280px' title="Comments">
+    <div ng-repeat="comment in messageToCommentOn.comments">
+      <div>{{comment.message}}</div>
+      <div>{{comment.user}}</div>
+      <div>{{comment.date | date:'MM/dd/yy @ h:mma'}}</div>
+
+    </div>
+    <textarea ng-model="messageData.newComment">
+
+    </textarea>
+    <button ng-click="postComment()">Post Comment</button>
+  </modal-dialog>
+
+
+
+
+
+</div>

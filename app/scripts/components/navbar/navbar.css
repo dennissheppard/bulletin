@@ -1,0 +1,16 @@
+#navbar{
+  min-height: 51px;
+}
+.welcome-message{
+  color: white;
+  float: right;
+  clear: right;
+}
+
+.logout{
+  cursor: pointer;
+}
+
+.logout:hover{
+  text-decoration: underline;
+}
