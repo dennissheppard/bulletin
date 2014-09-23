@@ -1,7 +1,4 @@
-#home{
-  margin-top: 120px;
-}
-
+/*
 .message{
   height: auto;
   width: 200px;
@@ -45,7 +42,89 @@
   float: right;
   width: 100px;
 }
+*/
 
-voting .voted{
+voting {
+    display:block;
+    margin:0 -5px;
+}
+voting .voted {
   color: #ccc;
+}
+
+.popular-tags .tag {
+    font-size:.95em;
+}
+
+.tag {
+    float:left;
+    margin-right:3px;
+    margin-bottom:3px;
+}
+
+.tag-wrapper {
+    margin-top:10px;
+}
+
+.message {
+    position:relative;
+}
+
+.delete-link {
+    position:absolute;
+    top:0;
+    right:5px;
+}
+
+.delete-link a {
+    color:gray;
+    font-size:1.2em;
+}
+
+.delete-link a:hover {
+    text-decoration:none;
+    color:red;
+    cursor:pointer;
+}
+
+.votes {
+    line-height: 1.85em;
+    text-align: center;
+    width: 1.85em;
+    font-size: 17px;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+.header {
+    margin-bottom:15px;
+}
+
+.new-message {
+    padding: 10px;
+    background-color: #F0F0F0;
+}
+
+.details-wrapper div {
+    font-size:12px;
+    line-height:1.5em;
+}
+.details-wrapper .ng-binding {
+    margin-bottom:3px;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
 }

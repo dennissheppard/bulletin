@@ -23,25 +23,19 @@
   <link rel="stylesheet" href="scripts/components/common/common.css" />
   <link rel="stylesheet" href="scripts/components/home/home.css" />
 </head>
+
 <body ng-app="bulletinApp">
+
 <loader></loader>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-
 <div id="navbar" ng-controller="NavbarCtrl">
-
   <div ng-include src="'scripts/components/navbar/navbar.tpl.html'"></div>
 </div>
-<div class="row">
-  <div>
-    <div class="container" ng-view=""></div>
-  </div>
-</div>
 
-
-
+<div class="container" ng-view=""></div>
 
 <!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -73,9 +67,6 @@
 <script src="scripts/components/home/home-controller.js"></script>
 <script src="scripts/components/home/home-service.js"></script>
 <script src="scripts/components/home/voting-directive.js"></script>
-
-
-
 
 <!-- endbuild -->
 </body>

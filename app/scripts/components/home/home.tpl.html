@@ -1,60 +1,102 @@
 <div id="home">
-  <div class="new-post-wrapper">
-    <button ng-click="createMessage()">Post New Bulletin</button>
-  </div>
-  <div class="new-post-wrapper">
-    <input type="text" placeholder="Search Bulletins" ng-model="search">
-  </div>
+    <div class="header row">
 
-  <div class="popular-tags">
-    Popular Tags:
-    <div ng-repeat="tag in allExistingTags">{{tag.text}}</div>
-  </div>
+        <div class="col-sm-5" id="post-new">
 
+            <div class="input-group">
+                <span class="input-group-addon btn-search">
+                    <span class="glyphicon glyphicon-search"></span>
+                </span>
+                <input type="text" placeholder="Search Bulletins" ng-model="search" class="form-control">
+            </div>
 
-  <div class="new-message" ng-show="showNewMessageBox">
-    <textarea ng-model="newMessageContent"></textarea>
-    <input ng-model="tag" placeholder="Type a tag for your bulletin">
-    <select ng-model="tagSuggestion" ng-options="tag.text for tag in allExistingTags"></select>
-    <button ng-click="addTagToMessage()">Tag it</button>
-    <button ng-click="saveMessage()">Save</button>
-  </div>
+            <div class="clearfix">&nbsp;</div>
 
-  <div class="message" ng-repeat="message in messageData.messages | filter: search ">
-    <div class="vote-wrapper">
-      <voting message="message"></voting>
+            <button class="btn btn-primary btn-block" ng-click="createMessage()"  onclick="$('#new-message').toggleClass('ng-hide');">
+                <span class="glyphicon glyphicon-pencil"></span> Post New Bulletin
+            </button>
+
+            <div class="new-message panel" id="new-message" ng-show="showNewMessageBox">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <textarea ng-model="newMessageContent" placeholder="Type your bulletin" class="form-control" rows="6"></textarea>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <input ng-model="tag" placeholder="Type a tag for your bulletin" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <select ng-model="tagSuggestion" ng-options="tag.text for tag in allExistingTags" class="form-control"></select>
+                        </div>
+                        <button ng-click="addTagToMessage()" class="btn btn-info btn-block">Tag it</button>
+                        <div class="clearfix">&nbsp;</div>
+                    </div>
+                </div>
+                <button ng-click="saveMessage()" class="btn btn-primary btn-block">Save</button>
+                <button class="btn default btn-block" onclick="$('#new-message').addClass('ng-hide');">Cancel</button>
+            </div>
+
+            <div class="clearfix">&nbsp;</div>
+
+        </div>
+
+        <div class="col-sm-7">
+            <div class="panel panel-info">
+                <div class="panel-heading">Popular Tags</div>
+                <div class="panel-body popular-tags">
+                    <span class="label label-info tag" ng-repeat="tag in allExistingTags">
+                       {{tag.text}}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    <div class="message-body">{{message.message}}</div>
-    <div></div>
-    <div>by: {{message.user}}</div>
-    <div>on: {{message.date | date:'MM/dd/yy @ h:mma'}}</div>
 
-    <div>{{message.comments.length}} Comments</div>
-    <div ng-show="message.canDelete" ng-click="deleteMessage($index)"><a class="delete-link">Delete</a></div>
 
-    <div ng-repeat="tag in message.tags">
-      <span class="tag">{{tag.text}}</span>
+    <div class="message-wrapper">
+        <div class="message panel panel-default" ng-repeat="message in messageData.messages | filter: search ">
+            <div class="panel-body">
+                <div ng-show="message.canDelete" ng-click="deleteMessage($index)" class="delete-link">
+                    <a title="Delete this bulletin">&times;</a>
+                </div>
+                <div class="message-body">{{message.message}}</div>
+                <div class="tag-wrapper">
+                    <div class="tag" ng-repeat="tag in message.tags">
+                        <span class="label label-default">{{tag.text}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-3 vote-wrapper">
+                        <voting message="message"></voting>
+                    </div>
+                    <div class="col-xs-9 details-wrapper">
+                        <div><strong>{{message.user}}</strong></div>
+                        <div>{{message.date | date:'MM/dd/yy @ h:mma'}}</div>
+                        <button class="btn default btn-xs" ng-click="showCommentDialog($index)">{{message.comments.length}} Comments »</button>
+                     </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-    <button ng-click="showCommentDialog($index)">Comment</button>
-  </div>
-
-  <modal-dialog show='modalShown' width='450px' height='280px' title="Comments">
-    <div ng-repeat="comment in messageToCommentOn.comments">
-      <div>{{comment.message}}</div>
-      <div>{{comment.user}}</div>
-      <div>{{comment.date | date:'MM/dd/yy @ h:mma'}}</div>
-
-    </div>
-    <textarea ng-model="messageData.newComment">
-
-    </textarea>
-    <button ng-click="postComment()">Post Comment</button>
-  </modal-dialog>
-
-
-
-
+    <modal-dialog show='modalShown' title="Comments">
+        <div class="list-group">
+            <div ng-repeat="comment in messageToCommentOn.comments" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    {{comment.message}}
+                </h4>
+                <div>{{comment.user}}</div>
+                <div>{{comment.date | date:'MM/dd/yy @ h:mma'}}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea ng-model="messageData.newComment" class="form-control"></textarea>
+        </div>
+        <button ng-click="postComment()" class="btn btn-primary btn-block">Post Comment</button>
+    </modal-dialog>
 
 </div>

@@ -13,7 +13,12 @@
   /* A centered div above the overlay with a box shadow. */
   z-index:10000;
   position: absolute;
-  width: 50%; /* Default */
+  width: 30%;
+
+    /* Rounded corners */
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
 
   /* Center the dialog */
   top: 50%;
@@ -29,6 +34,7 @@
   padding:10px;
   text-align: left;
 }
+
 .ng-modal-close {
   position: absolute;
   top: 3px;
@@ -37,13 +43,11 @@
   cursor: pointer;
   font-size: 120%;
   display: inline-block;
-  font-weight: bold;
-  font-family: 'arial', 'sans-serif';
 }
 
-.modal-title{
-  margin: 10px auto 0;
-  font-size: 18px;
-  font-weight: bold;
-  width: 120px;
+.ng-modal-title, .modal-title {
+    margin: 10px auto 0;
+    font-size: 18px;
+    font-weight: bold;
+    width: 120px;
 }
