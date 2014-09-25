@@ -22,7 +22,7 @@
   float: left;
 }
 
-#login input[type="submit"], button{
+#login input[type="submit"], #login button{
   color: #000;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
