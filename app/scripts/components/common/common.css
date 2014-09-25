@@ -13,33 +13,6 @@
     margin-bottom:30px;
 }
 
-.message {
-    display: inline-block;
-    width: 100%;
-    -webkit-column-break-inside: avoid;
-}
-
 .label {
     font-weight:normal;
-}
-
-@media (max-width: 649px) {
-    .message-wrapper {
-        -webkit-column-count: 2;
-        -webkit-column-gap: 20px;
-    }
-}
-
-@media (min-width: 650px) {
-    .message-wrapper {
-        -webkit-column-count: 3;
-        -webkit-column-gap: 20px;
-    }
-}
-
-@media (min-width: 992px) {
-    .message-wrapper {
-        -webkit-column-count: 4;
-        -webkit-column-gap: 20px;
-    }
 }
